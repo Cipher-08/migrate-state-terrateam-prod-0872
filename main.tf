@@ -15,7 +15,7 @@ resource "aws_s3_bucket" "terrateam-env-bucket-9298" {
 
 terraform {
   backend "s3" {
-    bucket         = "terrateam-state-testing-09"  # Initial backend bucket
+    bucket         = "terrateam-state-prod-09"  # Initial backend bucket
     key            = "terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terrateam-state-lock-01"

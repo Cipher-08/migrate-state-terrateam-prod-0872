@@ -1,21 +1,25 @@
-
+# Provider configuration
 provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "terrateam-env-bucket-9298" {
-  bucket = "terrateam-demo-bucket-092798"  # Replace with your preferred bucket name
-  acl    = "private"
+resource "aws_instance" "terrateam-instance" {
+  ami = "ami-0e86e20dae9224db8" 
+  instance_type = "t2.micro"
+  subnet_id = "subnet-02efa144df0a77c13" 
 
   tags = {
-    Name        = "TerraTeamDemoBucket"
-    Environment = "Testing"
+    Name        = "TerraTeamInitialInstance"
+    Environment = "Production"
+    Owner       = "Saksham"     # Add a new tag or modify an existing one
+    Version     = "1.0"         # New tag to force a change
   }
 }
 
+# Terraform backend configuration using the testing state bucket
 terraform {
   backend "s3" {
-    bucket         = "terrateam-state-testing-09"  # Initial backend bucket
+    bucket         = "terrateam-state-prod-09" 
     key            = "terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terrateam-state-lock-01"

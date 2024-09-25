@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "terrateam-env-bucket-9298" {
-  bucket = "terrateam-demo-bucket-092798"  # Replace with your preferred bucket name
+  bucket = "terrateam-demo-bucket-092798" 
   acl    = "private"
 
   tags = {

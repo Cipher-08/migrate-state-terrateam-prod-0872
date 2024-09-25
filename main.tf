@@ -10,7 +10,9 @@ resource "aws_instance" "terrateam-instance" {
 
   tags = {
     Name        = "TerraTeamInitialInstance"
-    Environment = "Testing"
+    Environment = "Production"
+    Owner       = "Saksham"     # Add a new tag or modify an existing one
+    Version     = "1.0"         # New tag to force a change
   }
 }
 

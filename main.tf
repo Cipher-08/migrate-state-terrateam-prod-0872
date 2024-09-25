@@ -19,7 +19,7 @@ resource "aws_instance" "terrateam-instance" {
 # Terraform backend configuration using the testing state bucket
 terraform {
   backend "s3" {
-    bucket         = "terrateam-state-testing-09" 
+    bucket         = "terrateam-state-prod-09" 
     key            = "terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terrateam-state-lock-01"

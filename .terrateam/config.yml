@@ -10,5 +10,5 @@ workflows:
       - type: init
       - type: plan
       - type: run
-        cmd: ['conftest-wrapper']
+        cmd: ['checkov-wrapper']
         capture_output: true

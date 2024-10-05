@@ -11,18 +11,7 @@ resource "aws_instance" "terrateam-instance" {
   tags = {
     Name        = "TerraTeamInitialInstance"
     Environment = "Production"
-    Owner       = "Saksham"     # Add a new tag or modify an existing one
-    Version     = "1.0"         # New tag to force a change
-  }
-}
-
-# Terraform backend configuration using the testing state bucket
-terraform {
-  backend "s3" {
-    bucket         = "terrateam-state-prod-09" 
-    key            = "terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "terrateam-state-lock-01"
-    encrypt        = true
+    Owner       = "Saksham"   
+    Version     = "1.0"        
   }
 }
